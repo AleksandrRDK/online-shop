@@ -16,6 +16,11 @@ export const login = async (email, password) => {
     return res.data.user;
 };
 
+export const logout = async () => {
+    const res = await API.post('/logout');
+    return res.data;
+};
+
 export const getProfile = async () => {
     return API.get('/profile');
 };

@@ -16,10 +16,27 @@
         padding: 2rem;
         max-width: 500px;
         width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
         gap: 1rem;
+    }
+    /* Чтобы скролл выглядел аккуратно */
+    &__content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &__content::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: var(--radius);
+    }
+
+    &__content::-webkit-scrollbar-thumb:hover {
+        background: var(--color-accent-blue);
     }
 }

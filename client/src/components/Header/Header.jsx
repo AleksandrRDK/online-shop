@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 function Header() {
@@ -9,19 +10,46 @@ function Header() {
                     <nav className="header__nav">
                         <ul className="header__list">
                             <li className="header__item">
-                                <a href="#" className="header__link">
+                                <NavLink
+                                    to="/catalog"
+                                    className={({ isActive }) =>
+                                        `header__link ${
+                                            isActive
+                                                ? 'header__link--active'
+                                                : ''
+                                        }`
+                                    }
+                                >
                                     Каталог
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="header__item">
-                                <a href="#" className="header__link">
+                                <NavLink
+                                    to="/cart"
+                                    className={({ isActive }) =>
+                                        `header__link ${
+                                            isActive
+                                                ? 'header__link--active'
+                                                : ''
+                                        }`
+                                    }
+                                >
                                     Корзина
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="header__item">
-                                <a href="#" className="header__link">
+                                <NavLink
+                                    to="/profile"
+                                    className={({ isActive }) =>
+                                        `header__link ${
+                                            isActive
+                                                ? 'header__link--active'
+                                                : ''
+                                        }`
+                                    }
+                                >
                                     Профиль
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>

@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register, login } from '@/api/users.js';
 import { useAuth } from '@/hooks/useAuth.js';
+import { useToast } from '@/hooks/useToast';
+import {
+    validateUsername,
+    validateEmail,
+    validatePassword,
+} from '@/utils/validators';
 import './AuthModal.scss';
 
 const AuthModal = ({ isOpen, onClose }) => {
@@ -9,16 +15,35 @@ const AuthModal = ({ isOpen, onClose }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
 
     const navigate = useNavigate();
     const { setUser } = useAuth();
+    const { addToast } = useToast();
 
     if (!isOpen) return null;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError('');
+
+        // Валидация
+        if (tab === 'register') {
+            const usernameError = validateUsername(username);
+            if (usernameError) {
+                addToast(usernameError, 'error');
+                return;
+            }
+        }
+        const emailError = validateEmail(email);
+        if (emailError) {
+            addToast(emailError, 'error');
+            return;
+        }
+        const passwordError = validatePassword(password);
+        if (passwordError) {
+            addToast(passwordError, 'error');
+            return;
+        }
+
         try {
             if (tab === 'register') {
                 await register(username, email, password);
@@ -30,7 +55,12 @@ const AuthModal = ({ isOpen, onClose }) => {
                 navigate('/profile');
             }
         } catch (err) {
-            setError(err.response?.data?.message || 'Ошибка');
+            addToast(
+                `Ошибка при обновлении данных ${
+                    err.response?.data?.message || 'Ошибка'
+                }`,
+                'error'
+            );
         }
     };
 
@@ -67,7 +97,9 @@ const AuthModal = ({ isOpen, onClose }) => {
                             type="text"
                             placeholder="Имя пользователя"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) =>
+                                setUsername(e.target.value.replace(/\s/g, ''))
+                            }
                             required
                         />
                     )}
@@ -75,17 +107,20 @@ const AuthModal = ({ isOpen, onClose }) => {
                         type="email"
                         placeholder="Email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) =>
+                            setEmail(e.target.value.replace(/\s/g, ''))
+                        }
                         required
                     />
                     <input
                         type="password"
                         placeholder="Пароль"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) =>
+                            setPassword(e.target.value.replace(/\s/g, ''))
+                        }
                         required
                     />
-                    {error && <div className="auth-modal__error">{error}</div>}
                     <button type="submit" className="auth-modal__submit">
                         {tab === 'login' ? 'Войти' : 'Зарегистрироваться'}
                     </button>

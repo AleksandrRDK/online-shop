@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
 import userRoutes from './routes/users.js';
+import ProductRoutes from './routes/products.js';
 
 dotenv.config();
 
@@ -40,3 +41,4 @@ app.get('/', (req, res) => {
     res.send('Сервер работает!');
 });
 app.use('/api/users', userRoutes);
+app.use('/api/products', ProductRoutes);

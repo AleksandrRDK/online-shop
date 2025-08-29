@@ -74,6 +74,15 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.post('/logout', (req, res) => {
+    try {
+        res.cookie('token', '', { maxAge: 0, path: '/' });
+        res.status(200).json({ message: 'Вы вышли' });
+    } catch (err) {
+        res.status(500).json({ message: 'Ошибка сервера' });
+    }
+});
+
 router.get('/profile', async (req, res) => {
     try {
         const token = req.cookies.token;
