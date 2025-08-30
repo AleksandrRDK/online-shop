@@ -6,7 +6,7 @@
 
     &__segment {
         position: absolute;
-        top: 0;
+        top: 25%;
         left: 50%;
         width: 6%;
         height: 50%;
@@ -19,7 +19,7 @@
 .loader-wrapper {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 }
 
 @keyframes spinner-fade {

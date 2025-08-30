@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProductById, updateProduct, deleteProduct } from '@/api/products';
+import { getCart, removeFromCart, addToCart } from '@/api/carts';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/useToast';
 import Header from '@/components/Header/Header';
@@ -8,6 +9,7 @@ import defaultProduct from '@/assets/default-product.png';
 
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 import './ProductPage.scss';
+import '@/styles/quantity.scss';
 
 const ProductPage = () => {
     const { id } = useParams();
@@ -18,6 +20,9 @@ const ProductPage = () => {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [cartItems, setCartItems] = useState({});
+    const [updating, setUpdating] = useState(false);
 
     const [isEditing, setIsEditing] = useState(false);
     const [editData, setEditData] = useState({
@@ -32,24 +37,65 @@ const ProductPage = () => {
 
     useEffect(() => {
         if (!id) return;
-        setLoading(true);
-        getProductById(id)
-            .then((data) => {
-                setProduct(data);
-                setEditData({
-                    title: data.title,
-                    price: data.price,
-                    description: data.description,
-                    tags: (data.tags || []).join(', '),
-                    characteristics: data.characteristics || {},
-                    image: data.image,
-                    owner: data.owner?._id || data.owner,
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                getProductById(id).then((data) => {
+                    setProduct(data);
+                    setEditData({
+                        title: data.title,
+                        price: data.price,
+                        description: data.description,
+                        tags: (data.tags || []).join(', '),
+                        characteristics: data.characteristics || {},
+                        image: data.image,
+                        owner: data.owner?._id || data.owner,
+                    });
                 });
-                setError(null);
-            })
-            .catch(() => setError('Ошибка при загрузке товара'))
-            .finally(() => setLoading(false));
+
+                if (user?._id) {
+                    const cart = await getCart(user._id);
+                    const initialCart = {};
+                    cart.forEach((item) => {
+                        initialCart[item.productId._id] = item.quantity;
+                    });
+                    setCartItems(initialCart);
+                }
+            } catch (error) {
+                setError('Ошибка при загрузке товара', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
     }, [id]);
+
+    const updateCart = async (change) => {
+        if (!user) return;
+        const currentQty = cartItems[id] || 0;
+        const newQuantity = currentQty + change;
+        if (newQuantity < 0) return;
+
+        try {
+            setUpdating(true);
+            if (newQuantity === 0) {
+                await removeFromCart(user._id, id);
+            } else {
+                await addToCart(user._id, id, change);
+            }
+            setCartItems((prev) => {
+                const updated = { ...prev };
+                if (newQuantity === 0) delete updated[id];
+                else updated[id] = newQuantity;
+                return updated;
+            });
+        } catch (err) {
+            console.error(err);
+            addToast('Ошибка при обновлении корзины', 'error');
+        } finally {
+            setUpdating(false);
+        }
+    };
 
     if (loading)
         return (
@@ -120,6 +166,7 @@ const ProductPage = () => {
         }
     };
 
+    const quantity = cartItems[id] || 0;
     const isOwner =
         user &&
         product.owner &&
@@ -196,6 +243,44 @@ const ProductPage = () => {
                                 <>
                                     <h1>{product.title}</h1>
                                     <p className="price">{product.price} ₽</p>
+                                    {quantity === 0 ? (
+                                        <button
+                                            className="quantity-btn__global"
+                                            onClick={() => updateCart(1)}
+                                            disabled={updating}
+                                        >
+                                            {updating
+                                                ? '...'
+                                                : 'Добавить в корзину'}
+                                        </button>
+                                    ) : (
+                                        <div className="quantity-controls">
+                                            <button
+                                                className="quantity-btn"
+                                                onClick={() => updateCart(-1)}
+                                                disabled={updating}
+                                            >
+                                                -
+                                            </button>
+                                            <span className="quantity-number">
+                                                {updating ? (
+                                                    <LoadingSpinner
+                                                        size={30}
+                                                        color="#3aaed8"
+                                                    />
+                                                ) : (
+                                                    quantity
+                                                )}
+                                            </span>
+                                            <button
+                                                className="quantity-btn"
+                                                onClick={() => updateCart(1)}
+                                                disabled={updating}
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    )}
                                     {product.tags &&
                                         product.tags.length > 0 && (
                                             <p className="tags">

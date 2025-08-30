@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 
 import userRoutes from './routes/users.js';
 import ProductRoutes from './routes/products.js';
+import CartRoutes from './routes/carts.js';
 
 dotenv.config();
 
@@ -42,3 +43,4 @@ app.get('/', (req, res) => {
 });
 app.use('/api/users', userRoutes);
 app.use('/api/products', ProductRoutes);
+app.use('/api/carts', CartRoutes);

@@ -4,6 +4,7 @@ import { ToastProvider } from '@/context/ToastContext/ToastContext';
 
 import AuthPage from './pages/AuthPage/AuthPage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
+import CartPage from './pages/CartPage/CartPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -20,6 +21,14 @@ function App() {
                             element={
                                 <PrivateRoute>
                                     <CatalogPage />
+                                </PrivateRoute>
+                            }
+                        />
+                        <Route
+                            path="/cart"
+                            element={
+                                <PrivateRoute>
+                                    <CartPage />
                                 </PrivateRoute>
                             }
                         />

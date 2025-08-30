@@ -1,20 +1,35 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProducts } from '@/api/products.js';
+import { addToCart, getCart, removeFromCart } from '@/api/carts.js';
+import { useAuth } from '@/hooks/useAuth';
 
 import './Catalog.scss';
+import '@/styles/quantity.scss';
 import defaultProduct from '@/assets/default-product.png';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 
 const Catalog = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { user } = useAuth();
+    const [cartItems, setCartItems] = useState({}); // { productId: quantity }
+    const [updating, setUpdating] = useState({}); // { productId: true/false }
 
     useEffect(() => {
-        const fetchProducts = async () => {
+        const fetchData = async () => {
             try {
                 const data = await getProducts();
                 setProducts(data);
+
+                if (user?._id) {
+                    const cart = await getCart(user._id);
+                    const initialCart = {};
+                    cart.forEach((item) => {
+                        initialCart[item.productId._id] = item.quantity;
+                    });
+                    setCartItems(initialCart);
+                }
             } catch (err) {
                 console.error(err);
             } finally {
@@ -22,20 +37,59 @@ const Catalog = () => {
             }
         };
 
-        fetchProducts();
-    }, []);
+        fetchData();
+    }, [user]);
+
+    const updateCart = async (productId, change) => {
+        try {
+            const currentQty = cartItems[productId] || 0;
+            const newQuantity = currentQty + change;
+
+            if (newQuantity < 0) return;
+
+            setUpdating((prev) => ({ ...prev, [productId]: true }));
+
+            if (newQuantity === 0) {
+                await removeFromCart(user._id, productId);
+            } else {
+                await addToCart(user._id, productId, change);
+            }
+
+            setCartItems((prev) => {
+                const updated = { ...prev };
+                if (newQuantity === 0) {
+                    delete updated[productId];
+                } else {
+                    updated[productId] = newQuantity;
+                }
+                return updated;
+            });
+        } catch (err) {
+            console.error(err);
+            alert('Ошибка при обновлении корзины');
+        } finally {
+            setUpdating((prev) => ({ ...prev, [productId]: false }));
+        }
+    };
+
+    if (loading) {
+        return (
+            <div className="loader-wrapper">
+                <LoadingSpinner size={160} color="#3aaed8" />
+            </div>
+        );
+    }
 
     return (
         <div className="container">
             <div className="catalog">
                 <h1 className="catalog__title">Каталог товаров</h1>
-                {loading ? (
-                    <div className="loader-wrapper">
-                        <LoadingSpinner size={160} color="#3aaed8" />
-                    </div>
-                ) : (
-                    <div className="catalog__grid">
-                        {products.map((p) => (
+                <div className="catalog__grid">
+                    {products.map((p) => {
+                        const quantity = cartItems[p._id] || 0;
+                        const isUpdating = updating[p._id] || false;
+
+                        return (
                             <div key={p._id} className="product-card">
                                 <img
                                     className="catalog__image"
@@ -62,16 +116,60 @@ const Catalog = () => {
                                 <p className="catalog__owner">
                                     Продавец: {p.owner.username}
                                 </p>
-                                <Link
-                                    to={`/product/${p._id}`}
-                                    className="product-info-circle"
-                                >
-                                    !
-                                </Link>
+                                <div className="catalog__actions">
+                                    {quantity === 0 ? (
+                                        <button
+                                            className="quantity-btn__global"
+                                            onClick={() => updateCart(p._id, 1)}
+                                            disabled={isUpdating}
+                                        >
+                                            {isUpdating
+                                                ? '...'
+                                                : 'Добавить в корзину'}
+                                        </button>
+                                    ) : (
+                                        <div className="quantity-controls">
+                                            <button
+                                                className="quantity-btn"
+                                                onClick={() =>
+                                                    updateCart(p._id, -1)
+                                                }
+                                                disabled={isUpdating}
+                                            >
+                                                -
+                                            </button>
+                                            <span className="quantity-number">
+                                                {isUpdating ? (
+                                                    <LoadingSpinner
+                                                        size={60}
+                                                        color="#3aaed8"
+                                                    />
+                                                ) : (
+                                                    quantity
+                                                )}
+                                            </span>
+                                            <button
+                                                className="quantity-btn"
+                                                onClick={() =>
+                                                    updateCart(p._id, 1)
+                                                }
+                                                disabled={isUpdating}
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    )}
+                                    <Link
+                                        to={`/product/${p._id}`}
+                                        className="product-info-circle"
+                                    >
+                                        !
+                                    </Link>
+                                </div>
                             </div>
-                        ))}
-                    </div>
-                )}
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );

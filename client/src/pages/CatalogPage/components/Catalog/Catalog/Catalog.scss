@@ -57,4 +57,11 @@
         color: var(--color-text-muted);
         margin-top: auto;
     }
+
+    .catalog__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+    }
 }
