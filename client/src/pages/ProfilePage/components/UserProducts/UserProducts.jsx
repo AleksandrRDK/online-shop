@@ -6,6 +6,7 @@ import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 import EditProductModal from '../EditProductModal/EditProductModal';
 import { useToast } from '@/hooks/useToast';
 
+import { motion as Motion } from 'framer-motion';
 import './UserProducts.scss';
 import '@/styles/card.scss';
 import defaultProduct from '@/assets/default-product.png';
@@ -16,6 +17,7 @@ function UserProducts({ user, products, setProducts }) {
     const { addToast } = useToast();
 
     useEffect(() => {
+        if (!user?._id) return;
         const fetchProducts = async () => {
             setLoading(true);
             try {
@@ -28,7 +30,7 @@ function UserProducts({ user, products, setProducts }) {
             }
         };
         fetchProducts();
-    }, [user._id]);
+    }, [user?._id, setProducts]);
 
     const handleDelete = async (id) => {
         if (!window.confirm('Удалить этот товар?')) return;
@@ -59,8 +61,14 @@ function UserProducts({ user, products, setProducts }) {
                 </div>
             ) : (
                 <div className="user-products__list">
-                    {products.map((product) => (
-                        <div key={product._id} className="product-card">
+                    {products.map((product, i) => (
+                        <Motion.div
+                            key={product._id}
+                            className="product-card"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.2, duration: 0.6 }}
+                        >
                             <img
                                 className="catalog__image"
                                 src={product.image}
@@ -89,7 +97,7 @@ function UserProducts({ user, products, setProducts }) {
                             >
                                 !
                             </Link>
-                        </div>
+                        </Motion.div>
                     ))}
                 </div>
             )}

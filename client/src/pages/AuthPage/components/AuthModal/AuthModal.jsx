@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register, login } from '@/api/users.js';
+import { getProfile } from '@/api/users.js';
 import { useAuth } from '@/hooks/useAuth.js';
 import { useToast } from '@/hooks/useToast';
 import {
@@ -49,8 +50,9 @@ const AuthModal = ({ isOpen, onClose }) => {
                 await register(username, email, password);
                 setTab('login');
             } else {
-                const user = await login(email, password);
-                setUser(user);
+                await login(email, password);
+                const res = await getProfile();
+                setUser(res.data);
                 onClose();
                 navigate('/profile');
             }

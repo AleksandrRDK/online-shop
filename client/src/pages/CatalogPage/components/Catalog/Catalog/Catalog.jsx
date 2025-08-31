@@ -6,6 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 
 import './Catalog.scss';
 import '@/styles/quantity.scss';
+import { motion as Motion } from 'framer-motion';
 import defaultProduct from '@/assets/default-product.png';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 
@@ -85,12 +86,18 @@ const Catalog = () => {
             <div className="catalog">
                 <h1 className="catalog__title">Каталог товаров</h1>
                 <div className="catalog__grid">
-                    {products.map((p) => {
+                    {products.map((p, i) => {
                         const quantity = cartItems[p._id] || 0;
                         const isUpdating = updating[p._id] || false;
 
                         return (
-                            <div key={p._id} className="product-card">
+                            <Motion.div
+                                key={p._id}
+                                className="product-card"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.2, duration: 0.6 }}
+                            >
                                 <img
                                     className="catalog__image"
                                     src={p.image}
@@ -141,7 +148,7 @@ const Catalog = () => {
                                             <span className="quantity-number">
                                                 {isUpdating ? (
                                                     <LoadingSpinner
-                                                        size={60}
+                                                        size={40}
                                                         color="#3aaed8"
                                                     />
                                                 ) : (
@@ -166,7 +173,7 @@ const Catalog = () => {
                                         !
                                     </Link>
                                 </div>
-                            </div>
+                            </Motion.div>
                         );
                     })}
                 </div>

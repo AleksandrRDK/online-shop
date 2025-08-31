@@ -1,17 +1,26 @@
 import './GlobalModal.scss';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 function GlobalModal({ isOpen, onClose, children }) {
     if (!isOpen) return null;
 
     return (
-        <div className="global-modal" onClick={onClose}>
-            <div
-                className="global-modal__content"
-                onClick={(e) => e.stopPropagation()}
+        <AnimatePresence>
+            <Motion.div
+                className="global-modal"
+                onClick={onClose}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
             >
-                {children}
-            </div>
-        </div>
+                <div
+                    className="global-modal__content"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    {children}
+                </div>
+            </Motion.div>
+        </AnimatePresence>
     );
 }
 

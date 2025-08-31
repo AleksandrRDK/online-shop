@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
 import './ToastContext.scss';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 const ToastContext = createContext();
 
@@ -22,12 +23,21 @@ export const ToastProvider = ({ children }) => {
         <ToastContext.Provider value={{ addToast }}>
             {children}
             <div className="toast-container">
-                {toasts.map((t) => (
-                    <div key={t.id} className={`toast toast--${t.type}`}>
-                        <span>{t.message}</span>
-                        <button onClick={() => removeToast(t.id)}>×</button>
-                    </div>
-                ))}
+                <AnimatePresence>
+                    {toasts.map((t) => (
+                        <Motion.div
+                            key={t.id}
+                            className={`toast toast--${t.type}`}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 30 }}
+                            transition={{ duration: 0.4 }}
+                        >
+                            <span>{t.message}</span>
+                            <button onClick={() => removeToast(t.id)}>×</button>
+                        </Motion.div>
+                    ))}
+                </AnimatePresence>
             </div>
         </ToastContext.Provider>
     );
