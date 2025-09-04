@@ -16,9 +16,11 @@ export const getProducts = async (page = 1, limit = 48, filter = 'all') => {
     }
 };
 
-export const getProductsByUser = async (userId) => {
+export const getProductsByUser = async (userId, page = 1, limit = 48) => {
     try {
-        const { data } = await axios.get(`${API_URL}/user/${userId}`);
+        const { data } = await axios.get(`${API_URL}/user/${userId}`, {
+            params: { page, limit },
+        });
         return data;
     } catch (err) {
         console.error(

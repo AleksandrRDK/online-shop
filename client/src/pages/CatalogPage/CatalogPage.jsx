@@ -8,7 +8,7 @@ import '@/styles/quantity.scss';
 import Header from '@/components/Header/Header';
 import FilterBar from './components/FilterBar';
 import ProductCard from './components/ProductCard';
-import Pagination from './components/Pagination';
+import Pagination from '@/components/Pagination/Pagination';
 import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 
 const CatalogPage = () => {

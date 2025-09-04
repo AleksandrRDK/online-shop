@@ -1,3 +1,5 @@
+import './Pagination.scss';
+
 function Pagination({ page, setPage, totalPages }) {
     const getVisiblePages = () => {
         const pages = [];
@@ -18,7 +20,7 @@ function Pagination({ page, setPage, totalPages }) {
     const visiblePages = getVisiblePages();
 
     return (
-        <div className="catalog__pagination">
+        <div className="pagination">
             <button disabled={page === 1} onClick={() => setPage(page - 1)}>
                 ← Назад
             </button>
