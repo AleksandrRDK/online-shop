@@ -1,4 +1,6 @@
 const API_URL = 'http://localhost:5000/api/carts';
+// const API_URL =
+//     'https://online-shop-server-production-a585.up.railway.app/api/carts';
 
 export const addToCart = async (userId, productId, quantity = 1) => {
     try {

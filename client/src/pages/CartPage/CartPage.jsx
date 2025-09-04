@@ -43,9 +43,7 @@ function CartPage() {
         return (
             <>
                 <Header />
-                <div className="loader-wrapper">
-                    <LoadingSpinner size={160} color="#3aaed8" />
-                </div>
+                <LoadingSpinner size={160} color="#3aaed8" />
             </>
         );
     }

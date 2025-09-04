@@ -5,12 +5,7 @@ import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth();
 
-    if (loading)
-        return (
-            <div className="loader-wrapper">
-                <LoadingSpinner size={160} color="#3aaed8" />
-            </div>
-        );
+    if (loading) return <LoadingSpinner size={160} color="#3aaed8" />;
 
     if (!user) return <Navigate to="/" replace />;
 

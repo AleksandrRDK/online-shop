@@ -10,12 +10,14 @@ import {
     validatePassword,
 } from '@/utils/validators';
 import './AuthModal.scss';
+import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 
 const AuthModal = ({ isOpen, onClose }) => {
     const [tab, setTab] = useState('login');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
     const { setUser } = useAuth();
@@ -46,6 +48,7 @@ const AuthModal = ({ isOpen, onClose }) => {
         }
 
         try {
+            setLoading(true);
             if (tab === 'register') {
                 await register(username, email, password);
                 setTab('login');
@@ -57,14 +60,13 @@ const AuthModal = ({ isOpen, onClose }) => {
                 navigate('/profile');
             }
         } catch (err) {
-            addToast(
-                `Ошибка при обновлении данных ${
-                    err.response?.data?.message || 'Ошибка'
-                }`,
-                'error'
-            );
+            addToast(`${err.response?.data?.message || 'Ошибка'}`, 'error');
+        } finally {
+            setLoading(false);
         }
     };
+
+    if (loading) return <LoadingSpinner size={160} color="#3aaed8" />;
 
     return (
         <div className="auth-modal">

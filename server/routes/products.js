@@ -39,11 +39,28 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        const products = await Product.find().populate(
-            'owner',
-            'username email'
-        );
-        res.json(products);
+        let { page = 1, limit = 48, filter = 'all' } = req.query;
+        page = parseInt(page);
+        limit = parseInt(limit);
+        // фильтр
+        let sortOption = {};
+        if (filter === 'new') {
+            sortOption = { createdAt: -1 }; // сначала новые
+        }
+
+        const totalItems = await Product.countDocuments();
+        const products = await Product.find()
+            .populate('owner', 'username email')
+            .sort(sortOption)
+            .skip((page - 1) * limit)
+            .limit(limit);
+
+        res.json({
+            products,
+            totalItems,
+            totalPages: Math.ceil(totalItems / limit),
+            currentPage: page,
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

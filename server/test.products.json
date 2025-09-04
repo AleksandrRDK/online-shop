@@ -1,0 +1,1412 @@
+[{
+  "_id": {
+    "$oid": "68b15c9a0d8e6054e21c64c0"
+  },
+  "title": "Игровая клавиатура HyperX Alloy",
+  "description": "Механическая клавиатура с подсветкой.",
+  "image": "https://example.com/images/keyboard.png",
+  "price": 6990,
+  "tags": [
+    "игры",
+    "периферия",
+    "клавиатура"
+  ],
+  "characteristics": {
+    "Тип": "Механическая",
+    "Подсветка": "RGB",
+    "Вес": "1.2 кг"
+  },
+  "owner": {
+    "$oid": "68b0bfe5f9e8d9e8ba4e608a"
+  },
+  "createdAt": {
+    "$date": "2025-08-29T07:54:02.874Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-29T07:54:02.874Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b15cf90d8e6054e21c64c3"
+  },
+  "title": "iPhone 14 Pro",
+  "description": "Новый iPhone 14 Pro с потрясающей камерой и мощным процессором.",
+  "image": "https://example.com/iphone14pro.jpg",
+  "price": 109990,
+  "tags": [
+    "phone",
+    "apple",
+    "smartphone"
+  ],
+  "characteristics": {
+    "color": "Graphite",
+    "memory": "256GB",
+    "screen": "6.1 inch",
+    "battery": "3200 mAh"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-08-29T07:55:37.146Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-29T07:55:37.146Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b1a877342d0a407d26d1ad"
+  },
+  "title": "Монитор Samsung Odyssey G5",
+  "description": "Изогнутый игровой монитор с высокой частотой обновления и отличной цветопередачей.",
+  "image": "https://images.samsung.com/monitor-g5.jpg",
+  "price": 34999,
+  "tags": [
+    "монитор",
+    "игровой",
+    "самсунг"
+  ],
+  "characteristics": {
+    "Диагональ": "27 дюймов",
+    "Разрешение": "2560x1440 (QHD)",
+    "Частота обновления": "144 Гц",
+    "Время отклика": "1 мс",
+    "Тип матрицы": "VA",
+    "Яркость": "250 кд/м²",
+    "Подсветка": "LED",
+    "Разъёмы": "HDMI, DisplayPort",
+    "Цвет": "Чёрный"
+  },
+  "owner": {
+    "$oid": "68b0bfe5f9e8d9e8ba4e608a"
+  },
+  "createdAt": {
+    "$date": "2025-08-29T13:17:43.705Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-29T22:51:07.303Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b45dad7945bc1e3d38ba5c"
+  },
+  "title": "MacBook Air M2",
+  "description": "Лёгкий и мощный ноутбук MacBook Air с процессором M2 и Retina дисплеем.",
+  "image": "https://example.com/macbookairm2.jpg",
+  "price": 139990,
+  "tags": [
+    "laptop",
+    "apple",
+    "macbook"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "memory": "16GB",
+    "storage": "512GB SSD",
+    "screen": "13.6 inch"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-08-31T14:35:25.762Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T14:35:25.762Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b45dd97945bc1e3d38ba61"
+  },
+  "title": "Samsung Galaxy S23",
+  "description": "Флагманский смартфон Samsung Galaxy S23 с потрясающим дисплеем и камерой.",
+  "image": "https://example.com/galaxys23.jpg",
+  "price": 89990,
+  "tags": [
+    "phone",
+    "samsung",
+    "smartphone"
+  ],
+  "characteristics": {
+    "color": "Phantom Black",
+    "memory": "128GB",
+    "screen": "6.1 inch",
+    "battery": "3900 mAh"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-08-31T14:36:09.151Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T14:36:09.151Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b45de37945bc1e3d38ba66"
+  },
+  "title": "Sony WH-1000XM5",
+  "description": "Премиальные наушники с шумоподавлением и превосходным качеством звука.",
+  "image": "https://example.com/sonywh1000xm5.jpg",
+  "price": 34990,
+  "tags": [
+    "headphones",
+    "sony",
+    "audio"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "30 hours",
+    "weight": "250g",
+    "wireless": "true"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-08-31T14:36:19.088Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T14:36:19.088Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b45dec7945bc1e3d38ba6b"
+  },
+  "title": "Apple Watch Series 9",
+  "description": "Умные часы Apple Watch Series 9 с функциями здоровья и фитнеса.",
+  "image": "https://example.com/applewatch9.jpg",
+  "price": 39990,
+  "tags": [
+    "watch",
+    "apple",
+    "smartwatch"
+  ],
+  "characteristics": {
+    "color": "Midnight",
+    "size": "45mm",
+    "battery": "18 hours",
+    "waterResistant": "true"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-08-31T14:36:28.544Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T14:36:28.544Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b468708a83b64b281d6893"
+  },
+  "title": "Tank",
+  "description": "Tank Panhard EBR 105",
+  "image": "https://aleksandrrdk.github.io/online-shop-client/",
+  "price": 6100000,
+  "tags": [
+    "#Tanchik"
+  ],
+  "characteristics": {
+    "Отличительные отметки": "3 штуки"
+  },
+  "owner": {
+    "$oid": "68b465758a83b64b281d6879"
+  },
+  "createdAt": {
+    "$date": "2025-08-31T15:21:20.671Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-31T16:00:00.535Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b899d01120a2e504ed252a"
+  },
+  "title": "Sony WH-1000XM5",
+  "description": "Беспроводные наушники Sony с шумоподавлением и высококачественным звуком.",
+  "image": "https://example.com/sonywh1000xm5.jpg",
+  "price": 29990,
+  "tags": [
+    "headphones",
+    "sony",
+    "wireless"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "30 hours",
+    "wireless": "true",
+    "noiseCancelling": "true"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:04.892Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:04.892Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b899d91120a2e504ed2531"
+  },
+  "title": "Apple AirPods Pro 2",
+  "description": "Беспроводные наушники Apple с активным шумоподавлением и пространственным звуком.",
+  "image": "https://example.com/airpodspro2.jpg",
+  "price": 24990,
+  "tags": [
+    "headphones",
+    "apple",
+    "wireless"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "24 hours",
+    "wireless": "true",
+    "noiseCancelling": "true"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:13.555Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:13.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b899e11120a2e504ed2538"
+  },
+  "title": "Bose QuietComfort 45",
+  "description": "Премиальные наушники Bose с комфортной посадкой и шумоподавлением.",
+  "image": "https://example.com/boseqc45.jpg",
+  "price": 27990,
+  "tags": [
+    "headphones",
+    "bose",
+    "wireless"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "battery": "24 hours",
+    "wireless": "true",
+    "noiseCancelling": "true"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:21.941Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:21.941Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b899e91120a2e504ed253f"
+  },
+  "title": "Logitech MX Master 3",
+  "description": "Эргономичная беспроводная мышь с высокой точностью и удобными кнопками.",
+  "image": "https://example.com/logitechmx3.jpg",
+  "price": 9990,
+  "tags": [
+    "mouse",
+    "logitech",
+    "wireless"
+  ],
+  "characteristics": {
+    "color": "Graphite",
+    "dpi": "4000",
+    "wireless": "true",
+    "buttons": "7"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:29.237Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:29.237Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b899ef1120a2e504ed2546"
+  },
+  "title": "Razer DeathAdder V3",
+  "description": "Игровая мышь Razer с высокой чувствительностью и RGB подсветкой.",
+  "image": "https://example.com/razerdeathadderv3.jpg",
+  "price": 4990,
+  "tags": [
+    "mouse",
+    "razer",
+    "gaming"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "dpi": "26000",
+    "wireless": "false",
+    "buttons": "8"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:35.749Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:35.749Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b899f81120a2e504ed254d"
+  },
+  "title": "Microsoft Surface Mouse",
+  "description": "Стильная и компактная беспроводная мышь Microsoft для повседневного использования.",
+  "image": "https://example.com/surfacemouse.jpg",
+  "price": 3990,
+  "tags": [
+    "mouse",
+    "microsoft",
+    "wireless"
+  ],
+  "characteristics": {
+    "color": "Platinum",
+    "dpi": "3200",
+    "wireless": "true",
+    "buttons": "5"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:44.948Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:44.948Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b89a001120a2e504ed2554"
+  },
+  "title": "Logitech G915 TKL",
+  "description": "Механическая игровая клавиатура с низким профилем и RGB подсветкой.",
+  "image": "https://example.com/logitechg915.jpg",
+  "price": 17990,
+  "tags": [
+    "keyboard",
+    "logitech",
+    "mechanical"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "switchType": "GL Tactile",
+    "wireless": "true",
+    "keys": "87"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:52.395Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:52.395Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b89a071120a2e504ed255b"
+  },
+  "title": "Razer BlackWidow V4",
+  "description": "Механическая клавиатура Razer с высокой долговечностью и RGB подсветкой.",
+  "image": "https://example.com/razerblackwidowv4.jpg",
+  "price": 12990,
+  "tags": [
+    "keyboard",
+    "razer",
+    "mechanical"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "switchType": "Green",
+    "wireless": "false",
+    "keys": "104"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:41:59.964Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:41:59.964Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b89a0e1120a2e504ed2562"
+  },
+  "title": "Corsair K70 RGB MK.2",
+  "description": "Механическая клавиатура Corsair с алюминиевой рамой и настраиваемой подсветкой.",
+  "image": "https://example.com/corsairk70.jpg",
+  "price": 13990,
+  "tags": [
+    "keyboard",
+    "corsair",
+    "mechanical"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "switchType": "Cherry MX Red",
+    "wireless": "false",
+    "keys": "104"
+  },
+  "owner": {
+    "$oid": "68aff499c4b55e50e2ead43f"
+  },
+  "createdAt": {
+    "$date": "2025-09-03T19:42:06.477Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T19:42:06.477Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cdb"
+  },
+  "title": "Sony WH-1000XM5",
+  "description": "Беспроводные наушники Sony с шумоподавлением и высококачественным звуком.",
+  "image": "https://example.com/product1.jpg",
+  "price": 29990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "30 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cdc"
+  },
+  "title": "Apple AirPods Pro 2",
+  "description": "Беспроводные наушники Apple с активным шумоподавлением и пространственным звуком.",
+  "image": "https://example.com/product2.jpg",
+  "price": 24990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "24 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cdd"
+  },
+  "title": "Bose QC45",
+  "description": "Премиальные наушники Bose с комфортной посадкой и шумоподавлением.",
+  "image": "https://example.com/product3.jpg",
+  "price": 27990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "battery": "24 hours",
+    "size": "Large",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cde"
+  },
+  "title": "JBL Live 660NC",
+  "description": "Наушники JBL с шумоподавлением и длительным временем работы.",
+  "image": "https://example.com/product4.jpg",
+  "price": 19990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Blue",
+    "battery": "24 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cdf"
+  },
+  "title": "Sennheiser Momentum",
+  "description": "Наушники Sennheiser с отличным качеством звука и комфортной посадкой.",
+  "image": "https://example.com/product5.jpg",
+  "price": 23990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Graphite",
+    "battery": "24 hours",
+    "size": "Large",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce0"
+  },
+  "title": "Logitech MX Master 3",
+  "description": "Эргономичная беспроводная мышь с высокой точностью и удобными кнопками.",
+  "image": "https://example.com/product6.jpg",
+  "price": 9990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Graphite",
+    "battery": "12 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce1"
+  },
+  "title": "Razer DeathAdder V3",
+  "description": "Игровая мышь Razer с высокой чувствительностью и RGB подсветкой.",
+  "image": "https://example.com/product7.jpg",
+  "price": 4990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "Medium",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce2"
+  },
+  "title": "Microsoft Surface Mouse",
+  "description": "Стильная и компактная беспроводная мышь Microsoft для повседневного использования.",
+  "image": "https://example.com/product8.jpg",
+  "price": 3990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Platinum",
+    "battery": "12 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce3"
+  },
+  "title": "Corsair Dark Core",
+  "description": "Беспроводная игровая мышь Corsair с высокой точностью.",
+  "image": "https://example.com/product9.jpg",
+  "price": 6990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "18 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce4"
+  },
+  "title": "SteelSeries Rival 3",
+  "description": "Игровая мышь SteelSeries с RGB подсветкой и комфортной формой.",
+  "image": "https://example.com/product10.jpg",
+  "price": 3290,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Red",
+    "battery": "N/A",
+    "size": "Medium",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce5"
+  },
+  "title": "Logitech G915 TKL",
+  "description": "Механическая игровая клавиатура с низким профилем и RGB подсветкой.",
+  "image": "https://example.com/product11.jpg",
+  "price": 17990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "12 hours",
+    "size": "87 keys",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce6"
+  },
+  "title": "Razer BlackWidow V4",
+  "description": "Механическая клавиатура Razer с высокой долговечностью и RGB подсветкой.",
+  "image": "https://example.com/product12.jpg",
+  "price": 12990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "104 keys",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce7"
+  },
+  "title": "Corsair K70 RGB MK.2",
+  "description": "Механическая клавиатура Corsair с алюминиевой рамой и настраиваемой подсветкой.",
+  "image": "https://example.com/product13.jpg",
+  "price": 13990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "104 keys",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce8"
+  },
+  "title": "SteelSeries Apex Pro",
+  "description": "Механическая клавиатура SteelSeries с настраиваемым откликом клавиш.",
+  "image": "https://example.com/product14.jpg",
+  "price": 15990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "battery": "12 hours",
+    "size": "104 keys",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ce9"
+  },
+  "title": "HyperX Alloy FPS Pro",
+  "description": "Компактная механическая клавиатура HyperX для игр.",
+  "image": "https://example.com/product15.jpg",
+  "price": 8990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "87 keys",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cea"
+  },
+  "title": "Apple Watch Series 9",
+  "description": "Умные часы Apple Watch Series 9 с функциями здоровья и фитнеса.",
+  "image": "https://example.com/product16.jpg",
+  "price": 39990,
+  "tags": [
+    "watch",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Midnight",
+    "battery": "18 hours",
+    "size": "45mm",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ceb"
+  },
+  "title": "Samsung Galaxy Watch 6",
+  "description": "Умные часы Samsung с мониторингом здоровья и фитнеса.",
+  "image": "https://example.com/product17.jpg",
+  "price": 35990,
+  "tags": [
+    "watch",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "battery": "24 hours",
+    "size": "44mm",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cec"
+  },
+  "title": "Garmin Venu 3",
+  "description": "Умные часы Garmin с GPS и фитнес функциями.",
+  "image": "https://example.com/product18.jpg",
+  "price": 32990,
+  "tags": [
+    "watch",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "20 hours",
+    "size": "45mm",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5ced"
+  },
+  "title": "Fitbit Versa 4",
+  "description": "Умные часы Fitbit с мониторингом активности и сна.",
+  "image": "https://example.com/product19.jpg",
+  "price": 19990,
+  "tags": [
+    "watch",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Red",
+    "battery": "18 hours",
+    "size": "42mm",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cee"
+  },
+  "title": "Fossil Gen 6",
+  "description": "Стильные умные часы Fossil с функциями здоровья.",
+  "image": "https://example.com/product20.jpg",
+  "price": 22990,
+  "tags": [
+    "watch",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Brown",
+    "battery": "24 hours",
+    "size": "44mm",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cef"
+  },
+  "title": "JBL Charge 5",
+  "description": "Портативная колонка JBL с мощным звуком и Bluetooth.",
+  "image": "https://example.com/product21.jpg",
+  "price": 11990,
+  "tags": [
+    "speaker",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Blue",
+    "battery": "20 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf0"
+  },
+  "title": "Bose SoundLink Mini II",
+  "description": "Компактная колонка Bose с чистым звуком.",
+  "image": "https://example.com/product22.jpg",
+  "price": 10990,
+  "tags": [
+    "speaker",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "12 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf1"
+  },
+  "title": "Sony SRS-XB33",
+  "description": "Портативная колонка Sony с глубокими басами.",
+  "image": "https://example.com/product23.jpg",
+  "price": 9990,
+  "tags": [
+    "speaker",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Red",
+    "battery": "24 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf2"
+  },
+  "title": "UE Boom 3",
+  "description": "Устойчивая к воде колонка Ultimate Ears с 360° звуком.",
+  "image": "https://example.com/product24.jpg",
+  "price": 8990,
+  "tags": [
+    "speaker",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "15 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf3"
+  },
+  "title": "Marshall Emberton",
+  "description": "Компактная колонка Marshall с мощным звуком и стильным дизайном.",
+  "image": "https://example.com/product25.jpg",
+  "price": 12990,
+  "tags": [
+    "speaker",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "battery": "20 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf4"
+  },
+  "title": "Sony WH-CH720N",
+  "description": "Бюджетные наушники Sony с шумоподавлением.",
+  "image": "https://example.com/product26.jpg",
+  "price": 7990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "35 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf5"
+  },
+  "title": "Beats Studio Buds",
+  "description": "Наушники Beats с активным шумоподавлением и Bass Boost.",
+  "image": "https://example.com/product27.jpg",
+  "price": 11990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "24 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf6"
+  },
+  "title": "JBL Tune 750BTNC",
+  "description": "Наушники JBL с шумоподавлением и комфортной посадкой.",
+  "image": "https://example.com/product28.jpg",
+  "price": 6990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Blue",
+    "battery": "15 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf7"
+  },
+  "title": "Logitech MX Anywhere 3",
+  "description": "Компактная беспроводная мышь Logitech для путешествий.",
+  "image": "https://example.com/product29.jpg",
+  "price": 6990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Graphite",
+    "battery": "12 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf8"
+  },
+  "title": "Razer Basilisk V3",
+  "description": "Игровая мышь Razer с настраиваемыми кнопками и RGB подсветкой.",
+  "image": "https://example.com/product30.jpg",
+  "price": 4990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "Medium",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cf9"
+  },
+  "title": "Microsoft Ergonomic Mouse",
+  "description": "Эргономичная проводная мышь Microsoft для долгой работы.",
+  "image": "https://example.com/product31.jpg",
+  "price": 3290,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "Large",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cfa"
+  },
+  "title": "Apple Magic Mouse 2",
+  "description": "Стильная беспроводная мышь Apple с гладкой поверхностью.",
+  "image": "https://example.com/product32.jpg",
+  "price": 5990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "12 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cfb"
+  },
+  "title": "Corsair M65 RGB Elite",
+  "description": "Игровая мышь Corsair с высоким DPI и RGB подсветкой.",
+  "image": "https://example.com/product33.jpg",
+  "price": 4990,
+  "tags": [
+    "mouse",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "Medium",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cfc"
+  },
+  "title": "Razer Huntsman Mini",
+  "description": "Компактная механическая клавиатура Razer для игр.",
+  "image": "https://example.com/product34.jpg",
+  "price": 8990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "60 keys",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cfd"
+  },
+  "title": "Logitech K380",
+  "description": "Компактная беспроводная клавиатура Logitech для работы с несколькими устройствами.",
+  "image": "https://example.com/product35.jpg",
+  "price": 3990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "12 hours",
+    "size": "79 keys",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cfe"
+  },
+  "title": "Keychron K2",
+  "description": "Механическая клавиатура Keychron с RGB подсветкой и Bluetooth.",
+  "image": "https://example.com/product36.jpg",
+  "price": 7990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Gray",
+    "battery": "12 hours",
+    "size": "84 keys",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5cff"
+  },
+  "title": "Anne Pro 2",
+  "description": "Компактная механическая клавиатура с RGB подсветкой и Bluetooth.",
+  "image": "https://example.com/product37.jpg",
+  "price": 6990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "12 hours",
+    "size": "61 keys",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5d00"
+  },
+  "title": "Ducky One 2 Mini",
+  "description": "Механическая клавиатура Ducky с RGB подсветкой.",
+  "image": "https://example.com/product38.jpg",
+  "price": 8990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "N/A",
+    "size": "61 keys",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5d01"
+  },
+  "title": "Apple Watch SE",
+  "description": "Бюджетная версия умных часов Apple с базовыми функциями здоровья.",
+  "image": "https://example.com/product39.jpg",
+  "price": 24990,
+  "tags": [
+    "watch",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Silver",
+    "battery": "18 hours",
+    "size": "40mm",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5d02"
+  },
+  "title": "Samsung Galaxy Buds 2",
+  "description": "Беспроводные наушники Samsung с активным шумоподавлением.",
+  "image": "https://example.com/product40.jpg",
+  "price": 6990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "White",
+    "battery": "20 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5d03"
+  },
+  "title": "Bose Sport Earbuds",
+  "description": "Спортивные наушники Bose с надежной посадкой и качественным звуком.",
+  "image": "https://example.com/product41.jpg",
+  "price": 8990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "12 hours",
+    "size": "Small",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5d04"
+  },
+  "title": "JBL Club 950NC",
+  "description": "Наушники JBL с активным шумоподавлением и мощным звуком.",
+  "image": "https://example.com/product42.jpg",
+  "price": 9990,
+  "tags": [
+    "headphones",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Blue",
+    "battery": "20 hours",
+    "size": "Medium",
+    "wireless": true
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+},
+{
+  "_id": {
+    "$oid": "68b8a08bb35c7a192a4b5d05"
+  },
+  "title": "Logitech G Pro X",
+  "description": "Игровая механическая клавиатура Logitech с RGB подсветкой.",
+  "image": "https://example.com/product43.jpg",
+  "price": 15990,
+  "tags": [
+    "keyboard",
+    "tech",
+    "new"
+  ],
+  "characteristics": {
+    "color": "Black",
+    "battery": "N/A",
+    "size": "104 keys",
+    "wireless": false
+  },
+  "ownerId": "68aff499c4b55e50e2ead43f"
+}]

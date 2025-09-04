@@ -57,8 +57,8 @@ router.post('/login', async (req, res) => {
         // ставим токен в HttpOnly куку
         res.cookie('token', token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // в dev можно false
-            sameSite: 'strict',
+            secure: true, // в dev можно false
+            sameSite: 'none',
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 дней
         });
 

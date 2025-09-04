@@ -1,10 +1,14 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/api/products';
+// const API_URL =
+//     'https://online-shop-server-production-a585.up.railway.app/api/products';
 
-export const getProducts = async () => {
+export const getProducts = async (page = 1, limit = 48, filter = 'all') => {
     try {
-        const { data } = await axios.get(API_URL);
+        const { data } = await axios.get(API_URL, {
+            params: { page, limit, filter },
+        });
         return data;
     } catch (err) {
         console.error('Ошибка при получении товаров:', err);
