@@ -7,7 +7,10 @@ function QuantityControls({ quantity, user, cartItems, id, setCartItems }) {
     const { addToast } = useToast();
 
     const updateCart = async (change) => {
-        if (!user) return;
+        if (!user?._id) {
+            addToast('Войдите, чтобы добавить товар в корзину', 'warning');
+            return;
+        }
         const currentQty = cartItems[id] || 0;
         const newQuantity = currentQty + change;
         if (newQuantity < 0) return;
