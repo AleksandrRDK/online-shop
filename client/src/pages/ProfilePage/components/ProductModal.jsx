@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/useToast';
+import { useAuth } from '@/hooks/useAuth';
 import { createProduct } from '@/api/products.js';
 import { validateAvatar } from '@/utils/validators';
 import Pica from 'pica';
@@ -9,11 +10,11 @@ function ProductModal({
     productData,
     setProductData,
     setIsProductOpen,
-    user,
     setProducts,
 }) {
     const [isLoading, setIsLoading] = useState(false);
     const { addToast } = useToast();
+    const { user } = useAuth();
     const [file, setFile] = useState(null);
     const [preview, setPreview] = useState(null);
 
