@@ -129,7 +129,6 @@ router.post('/refresh', async (req, res) => {
             return res.status(401).json({ message: 'Нет refresh токена' });
         }
 
-        // Берём все активные сессии
         const sessions = await Session.find({
             expiresAt: { $gt: new Date() },
         });
@@ -180,12 +179,19 @@ router.post('/logout', async (req, res) => {
                 session.refreshTokenHash
             );
             if (match) {
-                await session.deleteOne(); // удаляем найденную сессию
+                await session.deleteOne();
                 break;
             }
         }
+        const isProduction = process.env.NODE_ENV === 'production';
 
-        res.clearCookie('refreshToken');
+        res.clearCookie('refreshToken', {
+            httpOnly: true,
+            secure: isProduction,
+            sameSite: isProduction ? 'none' : 'lax',
+            path: '/',
+        });
+
         res.json({ message: 'Вы вышли из системы' });
     } catch (err) {
         console.error('Ошибка в /logout:', err);
