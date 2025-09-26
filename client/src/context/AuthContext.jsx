@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
 import api from '../http';
-import { useUsersApi } from '../api/users';
-import { refreshAccessToken } from '../api/auth';
+import { useUsersApi } from '@/api/users';
+import { refreshAccessToken, register, login, logout } from '@/api/auth';
 
 const AuthContext = createContext();
 
@@ -14,13 +14,24 @@ export const AuthProvider = ({ children }) => {
         localStorage.getItem('accessToken')
     );
 
-    const loginForLS = (token, userData) => {
-        localStorage.setItem('accessToken', token);
-        setAccessToken(token);
-        setUser(userData);
+    const registerUser = async (username, email, password) => {
+        const res = await register(username, email, password);
+        localStorage.setItem('accessToken', res.data.accessToken);
+        setAccessToken(res.data.accessToken);
+        setUser(res.data.user);
+        return res.data;
     };
 
-    const logoutForLS = () => {
+    const loginUser = async (email, password) => {
+        const res = await login(email, password);
+        localStorage.setItem('accessToken', res.data.accessToken);
+        setAccessToken(res.data.accessToken);
+        setUser(res.data.user);
+        return res.data;
+    };
+
+    const logoutUser = async () => {
+        await logout();
         localStorage.removeItem('accessToken');
         setAccessToken(null);
         setUser(null);
@@ -55,7 +66,9 @@ export const AuthProvider = ({ children }) => {
                 }
             } catch (err) {
                 console.error('[AuthProvider] авто-логин не удался:', err);
-                logoutForLS();
+                localStorage.removeItem('accessToken');
+                setUser(null);
+                setAccessToken(null);
             } finally {
                 setLoading(false);
             }
@@ -71,10 +84,11 @@ export const AuthProvider = ({ children }) => {
                 setUser,
                 accessToken,
                 setAccessToken,
-                loginForLS,
-                logoutForLS,
                 loading,
                 setLoading,
+                registerUser,
+                loginUser,
+                logoutUser,
             }}
         >
             {children}
