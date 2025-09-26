@@ -14,12 +14,12 @@ import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner';
 import defaultAvatar from '@/assets/default-avatar.png';
 
 function ProfileModal({ formData, setFormData, setIsOpen }) {
+    const { user, setUser, logoutUser } = useAuth();
     const [avatarPreview, setAvatarPreview] = useState(user.avatar || '');
     const [avatarFile, setAvatarFile] = useState(null);
     const [avatarLoading, setAvatarLoading] = useState(false);
     const [logoutLoading, setLogoutLoading] = useState(false);
 
-    const { user, setUser, logoutUser } = useAuth();
     const { addToast } = useToast();
     const { updateProfile, deleteProfile, uploadAvatar, deleteAvatar } =
         useUsersApi();
@@ -62,7 +62,7 @@ function ProfileModal({ formData, setFormData, setIsOpen }) {
         setLogoutLoading(true);
         try {
             const res = await logoutUser();
-            addToast(`${res.data.message}`, 'success');
+            addToast(`${res.message}`, 'success');
             navigate('/');
         } catch (err) {
             console.error(err);
