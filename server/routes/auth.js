@@ -115,7 +115,13 @@ router.post('/login', async (req, res) => {
 
         res.json({
             accessToken,
-            user: { id: user._id, username: user.username, email: user.email },
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                avatar: user.avatar,
+                cart: user.cart,
+            },
         });
     } catch (err) {
         console.error(err);

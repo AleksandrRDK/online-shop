@@ -29,7 +29,13 @@ router.get('/profile', authMiddleware, async (req, res) => {
         if (!user)
             return res.status(404).json({ message: 'Пользователь не найден' });
 
-        res.json(user);
+        res.json({
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            avatar: user.avatar,
+            cart: user.cart,
+        });
     } catch (e) {
         console.error(e);
         res.status(500).json({ message: 'Ошибка сервера' });
