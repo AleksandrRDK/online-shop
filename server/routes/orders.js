@@ -11,10 +11,6 @@ router.get('/user', authMiddleware, async (req, res) => {
             .populate('products.productId', 'title price image')
             .sort({ createdAt: -1 });
 
-        if (!orders || orders.length === 0) {
-            return res.status(404).json({ message: 'Заказы не найдены' });
-        }
-
         res.json(orders);
     } catch (err) {
         console.error('Ошибка получения заказов пользователя:', err);
