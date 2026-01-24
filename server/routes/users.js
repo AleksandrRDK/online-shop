@@ -1,6 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import User from '../models/User.js';
+import Session from '../models/Session.js';
 import cloudinary from '../cloudinary.js';
 import upload from '../middleware/upload.js';
 import streamifier from 'streamifier';
@@ -67,14 +68,30 @@ router.put('/profile', authMiddleware, async (req, res) => {
 
 router.delete('/profile', authMiddleware, async (req, res) => {
     try {
-        const user = await User.findById(req.userId);
+        const userId = req.userId;
+
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ message: 'Пользователь не найден' });
+        }
 
         if (user?.avatar) {
             const publicId = user.avatar.split('/').pop().split('.')[0];
             await cloudinary.uploader.destroy(`user_avatars/${publicId}`);
         }
 
-        await User.findByIdAndDelete(req.userId);
+        await Session.deleteMany({ userId });
+        await User.findByIdAndDelete(userId);
+
+        const isProduction = process.env.NODE_ENV === 'production';
+
+        res.clearCookie('refreshToken', {
+            httpOnly: true,
+            secure: isProduction,
+            sameSite: isProduction ? 'none' : 'lax',
+            path: '/',
+        });
 
         res.json({ message: 'Аккаунт удален' });
     } catch (e) {
